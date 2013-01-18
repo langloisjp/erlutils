@@ -1,0 +1,13 @@
+{application, erlutils,
+ [
+  {description, "An Erlang Utilities Library"},
+  {vsn, git},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {modules, []},
+  {env, []}
+ ]}.
+
