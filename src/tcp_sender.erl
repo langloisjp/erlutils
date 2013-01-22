@@ -61,7 +61,7 @@ init(Config) ->
             {stop, {error, failed_connect}}
     end.
 handle_call({send, Message}, _From, #state{socket = Socket} = State) ->
-    error_logger:info_msg("sending: ~p~n", [Message]),
+    %error_logger:info_msg("sending: ~p~n", [Message]),
     case gen_tcp:send(Socket, Message) of
         ok ->
             {reply, ok, State};
