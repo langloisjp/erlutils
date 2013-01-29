@@ -10,7 +10,7 @@
 -spec now() -> non_neg_integer().
 now() ->
     {MegaSecs, Secs, _Microsecs} = os:timestamp(),
-    integer_to_list(MegaSecs*1000000 + Secs).
+    MegaSecs * 1000000 + Secs.
 
 %% Converts timestamp (seconds since epoch)
 %% to Date Time.
