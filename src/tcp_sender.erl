@@ -34,8 +34,11 @@
 start_link(Config) ->
     gen_server:start_link(?MODULE, Config, []).
 
-send(Pid, Message) ->
-    gen_server:call(Pid, {send, Message}).
+%% Since there could be many instances of tcp_sender,
+%% caller must specify which one to call.
+%% (Pid is returned by start_link).
+send(TcpSenderPid, Message) ->
+    gen_server:call(TcpSenderPid, {send, Message}).
 
 %% ------------------------------------------------------------------
 %% gen_server Function Definitions
